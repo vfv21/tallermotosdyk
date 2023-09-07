@@ -1,6 +1,10 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\MecanicoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,17 +16,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+Route::view('/', 'welcome')->name('inicio');
+Route::resource('/clientes',ClienteController::class); //Crea 7 rutas para el CRUD de clientes
+Route::resource('/mecanicos',MecanicoController::class); //Crea 7 rutas para el CRUD de mecanicos
