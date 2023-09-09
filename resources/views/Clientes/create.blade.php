@@ -21,6 +21,13 @@ class="input input-bordered" required />
  <input type="text" name="apellido" placeholder="Escriba el apellido" maxlength="45" class="input 
 input-bordered" />
  </div>
+ <div class="form-control">
+    <label class="label" for="celular">
+    <span class="label-text">celular</span>
+    </label>
+    <input type="text" name="celular" placeholder="Escriba el celular" maxlength="45" class="input 
+   input-bordered" />
+    </div>
  <div class="form-control mt-6">
  <button class="btn btn-primary">Crear Cliente</button>
  <a href="{{ route('clientes.index') }}" class="btn btn-outline btn-primary mt-4">Cancelar</a>
